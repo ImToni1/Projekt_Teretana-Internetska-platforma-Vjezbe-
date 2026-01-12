@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	   <link rel="stylesheet" href="style.css">
+	   <meta name="viewport" content="width=device-width; initial-scale=1.0">
+       <meta http-equiv="content-type" content="text/html; charset=utf-8">
+	   <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+	   <title>Moja Teretana - O nama</title>
+	</head>
+	<body>
+	<header>
+		<nav>
+			<ul>
+			  <li><a href="index.html">Početna</a></li>
+			  <li><a href="news.html">Novosti</a></li>
+			  <li><a href="contact.html">Kontakt</a></li>
+			  <li><a href="about-us.html">O nama</a></li>
+			  <li><a href="gallery.html">Galerija</a></li>
+              <li><button id="theme-toggle">🌙</button></li>
+			</ul>
+		</nav>
+	</header>
+    
+    <div class="hero-image hero-small"></div>
+
+	<main>
+		<h1>Naša Priča</h1>
+		
+        <div style="text-align: center; margin-bottom: 40px;">
+		    <video width="80%" controls poster="Video/video.jpg" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
+		      <source src="Video/Video.mp4" type="video/mp4">
+		      Vaš preglednik ne podržava video.
+		    </video>
+        </div>
+		
+        <div class="about-text" style="background-color: var(--card-bg); padding: 30px; border-radius: 8px;">
+            <p>Naša priča započela je 2015. godine s jednostavnom idejom: stvoriti mjesto gdje se svi osjećaju dobrodošlo. Od male dvorane izrasli smo u moderan fitness centar.</p>
+            <p>Vjerujemo da fitness nije samo vježbanje, već stil života. Zato naš tim čine kineziolozi, nutricionisti i fizioterapeuti koji rade zajedno kako bi vam pružili potpunu podršku.</p>
+            <p>Danas se ponosimo najsuvremenijom opremom brendova Technogym i Life Fitness. Nudimo i prostor za funkcionalni trening, dvoranu za grupne treninge te wellness zonu.</p>
+            <p style="color: var(--primary-color); font-size: 1.2em; text-align: center; margin-top: 30px;">Naša misija je inspirirati vas da postanete najbolja verzija sebe.</p>
+        </div>
+		
+	</main>
+	<footer>
+		<p>Copyright © 2026 Toni Jelavić</p>
+	</footer>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-mode');
+            toggleButton.textContent = '☀️';
+        } else {
+            toggleButton.textContent = '🌙';
+        }
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                toggleButton.textContent = '☀️';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                toggleButton.textContent = '🌙';
+            }
+        });
+    </script>
+</body>
+</html>

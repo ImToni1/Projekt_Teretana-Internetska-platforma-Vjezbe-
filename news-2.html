@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+		<title>Moja Teretana - Ljetni Izazov</title>
+	</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+			  <li><a href="index.html">Početna</a></li>
+			  <li><a href="news.html">Novosti</a></li>
+			  <li><a href="contact.html">Kontakt</a></li>
+			  <li><a href="about-us.html">O nama</a></li>
+			  <li><a href="gallery.html">Galerija</a></li>
+              <li><button id="theme-toggle">🌙</button></li>
+			</ul>
+		</nav>
+	</header>
+    
+    <div class="hero-image hero-small"></div>
+
+	<main>
+        <a href="news.html" style="display: inline-block; margin-bottom: 20px; font-weight: bold;">&lt;&lt; Povratak na sve novosti</a>
+
+        <div class="about-text" style="background-color: var(--card-bg); padding: 30px; border-radius: 8px;">
+            <h1 style="text-align: left; border: none; margin-bottom: 10px;">Pripremite se za ljeto uz naš "Summer Body" izazov</h1>
+            
+            <time style="color: var(--text-muted); font-style: italic; display: block; margin-bottom: 20px;">02. Svibanj 2026.</time>
+
+            <img src="img/news-gym-2.jpg" alt="Ljetni izazov" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 8px; margin-bottom: 30px;">
+            
+            <p>Prijave za naš poznati ljetni izazov su otvorene! Ovaj program namijenjen je svima koji žele dovesti svoje tijelo u formu prije ljeta, bez obzira na trenutnu fizičku spremu.</p>
+            <p>Izazov traje 8 tjedana i uključuje:</p>
+            <ul style="color: var(--text-muted); margin-left: 20px; margin-bottom: 20px;">
+                <li>3 grupna treninga tjedno pod vodstvom trenera</li>
+                <li>Individualizirani plan prehrane</li>
+                <li>Tjedno mjerenje i praćenje napretka</li>
+            </ul>
+            <p>Za pobjednike izazova (najbolja transformacija u muškoj i ženskoj kategoriji) osigurali smo vrijedne nagrade, uključujući godišnju članarinu!</p>
+            <p>Prijavite se na recepciji do kraja tjedna.</p>
+        </div>
+	</main>
+
+	<footer>
+		<p>Copyright © 2026 Toni Jelavić</p>
+	</footer>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-mode');
+            toggleButton.textContent = '☀️';
+        } else {
+            toggleButton.textContent = '🌙';
+        }
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                toggleButton.textContent = '☀️';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                toggleButton.textContent = '🌙';
+            }
+        });
+    </script>
+</body>
+</html>

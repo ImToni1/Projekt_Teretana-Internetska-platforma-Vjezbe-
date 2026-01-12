@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+		<title>Moja Teretana - Akcija Proteini</title>
+	</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+			  <li><a href="index.html">Početna</a></li>
+			  <li><a href="news.html">Novosti</a></li>
+			  <li><a href="contact.html">Kontakt</a></li>
+			  <li><a href="about-us.html">O nama</a></li>
+			  <li><a href="gallery.html">Galerija</a></li>
+              <li><button id="theme-toggle">🌙</button></li>
+			</ul>
+		</nav>
+	</header>
+    
+    <div class="hero-image hero-small"></div>
+
+	<main>
+        <a href="news.html" style="display: inline-block; margin-bottom: 20px; font-weight: bold;">&lt;&lt; Povratak na sve novosti</a>
+
+        <div class="about-text" style="background-color: var(--card-bg); padding: 30px; border-radius: 8px;">
+            <h1 style="text-align: left; border: none; margin-bottom: 10px;">Velika akcija na proteinske shakeove</h1>
+            
+            <time style="color: var(--text-muted); font-style: italic; display: block; margin-bottom: 20px;">27. Listopada 2023.</time>
+
+            <img src="img/news-gym-3.jpg" alt="Proteini akcija" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 8px; margin-bottom: 30px;">
+            
+            <p>Oporavak nakon treninga ključan je za napredak mišića. Zato smo odlučili nagraditi naše vjerne članove posebnom ponudom.</p>
+            <p>Cijeli ovaj tjedan nudimo <strong>20% popusta</strong> na sve proteinske shakeove u našem gym baru! Akcija vrijedi za sve okuse, uključujući naše najpopularnije: čokolada, vanilija, jagoda i cookies & cream.</p>
+            <p>Osim shakeova, popust se odnosi i na proteinske pločice.</p>
+            <p>Ne propustite priliku da se osvježite i nahranite mišiće po super cijeni nakon napornog treninga.</p>
+        </div>
+	</main>
+
+	<footer>
+		<p>Copyright © 2026 Toni Jelavić</p>
+	</footer>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-mode');
+            toggleButton.textContent = '☀️';
+        } else {
+            toggleButton.textContent = '🌙';
+        }
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                toggleButton.textContent = '☀️';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                toggleButton.textContent = '🌙';
+            }
+        });
+    </script>
+</body>
+</html>
