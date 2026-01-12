@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+		<title>Moja Teretana - Novosti</title>
+	</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+			  <li><a href="index.html">Početna</a></li>
+			  <li><a href="news.html">Novosti</a></li>
+			  <li><a href="contact.html">Kontakt</a></li>
+			  <li><a href="about-us.html">O nama</a></li>
+			  <li><a href="gallery.html">Galerija</a></li>
+              <li><button id="theme-toggle">🌙</button></li>
+			</ul>
+		</nav>
+	</header>
+	
+    <div class="hero-image hero-small"></div>
+
+	<main>
+		<h1>Najnovije Vijesti</h1>
+		
+		<div class="news-container">
+            <div class="news-item">
+                <a href="#"><img src="news/news-gym-1.jpg" alt="Nova oprema"></a>
+                <div class="news-content">
+                    <h2>Stigla je nova cardio oprema!</h2>
+                    <p>S ponosom objavljujemo da smo naš cardio dio obogatili s 5 novih traka za trčanje najnovije generacije.</p>
+                    <time datetime="2023-10-25">25. Listopada 2023.</time>
+                    <br><br>
+                    <a href="#">Pročitaj više >></a>
+                </div>
+            </div>
+			
+            <div class="news-item">
+                <a href="#"><img src="news/news-gym-2.jpg" alt="Ljetni izazov"></a>
+                <div class="news-content">
+                    <h2>"Summer Body" izazov</h2>
+                    <p>Prijave za naš poznati ljetni izazov su otvorene. Očekuju vas intenzivni treninzi i nagrade.</p>
+                    <time datetime="2023-10-26">26. Listopada 2023.</time>
+                    <br><br>
+                    <a href="#">Pročitaj više >></a>
+                </div>
+            </div>
+			
+            <div class="news-item">
+                <a href="#"><img src="news/news-gym-3.jpg" alt="Proteini"></a>
+                <div class="news-content">
+                    <h2>Popust na proteine</h2>
+                    <p>Ovaj tjedan nudimo 20% popusta na sve proteinske shakeove u našem baru nakon treninga.</p>
+                    <time datetime="2023-10-27">27. Listopada 2023.</time>
+                    <br><br>
+                    <a href="#">Pročitaj više >></a>
+                </div>
+            </div>
+		</div>
+	</main>
+	<footer>
+		<p>Copyright © 2026 Toni Jelavić</p>
+	</footer>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-mode');
+            toggleButton.textContent = '☀️';
+        } else {
+            toggleButton.textContent = '🌙';
+        }
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                toggleButton.textContent = '☀️';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                toggleButton.textContent = '🌙';
+            }
+        });
+    </script>
+</body>
+</html>
